@@ -6,20 +6,39 @@
   "engines": {
     "vscode": "^1.96.0"
   },
+  "repository": {
+    "url": "https://github.com/wadoon/vscode-keymaerax"
+  },
+  "publisher": "vscode-keymaerax",
   "categories": [
     "Programming Languages"
   ],
   "contributes": {
-    "languages": [{
-      "id": "keymaerax",
-      "aliases": ["KeymaeraX", "keymaerax"],
-      "extensions": [".kyx"],
-      "configuration": "./language-configuration.json"
-    }],
-    "grammars": [{
-      "language": "keymaerax",
-      "scopeName": "source.keymaerax",
-      "path": "./syntaxes/keymaerax.tmLanguage.json"
-    }]
+    "languages": [
+      {
+        "id": "keymaerax",
+        "aliases": [
+          "KeymaeraX",
+          "keymaerax"
+        ],
+        "extensions": [
+          ".kyx"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "keymaerax",
+        "scopeName": "source.keymaerax",
+        "path": "./syntaxes/keymaerax.tmLanguage.json"
+      }
+    ]
+  },
+  "devDependencies": {
+    "@vscode/vsce": "^3.2.1"
+  },
+  "scripts": {
+    "prepare":"vsce package"
   }
 }
