@@ -1,0 +1,25 @@
+{
+  "name": "vscode-keymaerax",
+  "displayName": "vscode-keymaerax",
+  "description": "Support for the KeYmaera X Theorem Prover",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.96.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "keymaerax",
+      "aliases": ["KeymaeraX", "keymaerax"],
+      "extensions": [".kyx"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "keymaerax",
+      "scopeName": "source.keymaerax",
+      "path": "./syntaxes/keymaerax.tmLanguage.json"
+    }]
+  }
+}

@@ -1,0 +1,84 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "KeymaeraX",
+	"patterns": [
+		{ "include": "#keywords"},
+		{ "include": "#sorts"},
+		{ "include": "#modifier"},
+		{ "include": "#regionStart"},
+		{ "include": "#booleanLiteral"},
+		{ "include": "#numbers"},
+		{ "include": "#strings"},
+		{ "include": "#comments"}
+	],
+	"repository": {
+		"comments":{
+			"patterns": [{
+					"name": "comment.block",
+					"begin": "/\\*",
+					"end": "\\*/"
+				}]
+		},
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control.keymaerax",
+				"match": "\\b(ArchiveEntry|Description|Title|Link|End|package)\\b"
+			}]
+		},
+		"modifier":{
+			"patterns": [{
+				"name": "storage.modifier",
+				"match": "\\b(implicit)\\b"
+			}]
+		},
+
+		"regionStart":{
+			"patterns": [{
+				"name": "keyword.control",
+				"match": "\\b(Sequent|Problem|Lemma|Tool|SharedDefinitions|Theorem|Excercise|HP|HG|Axiom|Functions|Definitions|ProgramVariables|Variables|Problems|Tactic)\\b"
+			}]
+		},
+
+		"sorts":{
+			"patterns": [{
+				"name": "keyword.sort",
+				"match": "\\b(Real|Bool)\\b"
+			}]
+		},
+		"booleanLiteral":{
+			"patterns": [{
+				"name": "constant.language",
+				"match": "\\b(true|false)\\b"
+			}]
+		},
+
+		"numbers": {
+			"patterns": [
+				{
+					"name": "constant.numeric.keymaerax",
+					"match": "\\b(\\d+(\\.\\d*)?|\\.\\d+)\\b"
+				}
+			]
+		},
+		"operators": {
+			"patterns": [
+				{
+					"name": "keyword.operator.keymaerax",
+					"match": "\\b(\\+|\\-|\\*|\\/|\\^|\\=|\\<|\\>|\\!|\\&|\\||\\?|\\:|\\%|\\~|\\@|\\#|\\$|\\^|\\&|\\*|\\(|\\)|\\{|\\}|\\[|\\]|\\;|\\,|\\.)\\b"
+				}
+			]
+		},		
+		"strings": {
+			"name": "string.quoted.double.keymaerax",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.keymaerax",
+					"match": "\\\\."
+				}
+			]
+		}
+	},
+	"scopeName": "source.keymaerax"
+}
